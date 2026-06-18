@@ -10,25 +10,48 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--slot4-page-bg) !important;
   color: var(--slot4-page-text) !important;
-  background-image: none !important;
+  background-image: var(--slot4-body-gradient) !important;
+  background-attachment: fixed !important;
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.3), transparent 85%);
+  opacity: 0.35;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto 0 0;
+  height: 34vh;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(6,16,28,0.8));
+}
+
 *::selection {
-  background: var(--editorial-red) !important;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff;
+  background: #35d7ff !important;
+  color: #07111d !important;
+  -webkit-text-fill-color: #07111d;
 }
 
 *::-moz-selection {
-  background: var(--editorial-red) !important;
-  color: #fff !important;
+  background: #35d7ff !important;
+  color: #07111d !important;
 }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #ebe7e1; }
-::-webkit-scrollbar-thumb { background: #171717; border: 2px solid #ebe7e1; }
-::-webkit-scrollbar-thumb:hover { background: var(--editorial-red); }
+::-webkit-scrollbar-track { background: #08111d; }
+::-webkit-scrollbar-thumb { background: #24354a; border: 2px solid #08111d; }
+::-webkit-scrollbar-thumb:hover { background: #7f2020; }
 
 .editorial-brand,
 .editorial-serif {
@@ -37,13 +60,32 @@ body {
 
 .editorial-brand {
   font-style: italic;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.055em;
 }
 
-.editorial-rule { border-color: color-mix(in srgb, var(--editorial-ink) 22%, transparent); }
+.luxury-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.luxury-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(127,32,32,0.2), transparent 22%),
+    radial-gradient(circle at 80% 12%, rgba(53,215,255,0.14), transparent 18%);
+  pointer-events: none;
+}
+
+.glass-card {
+  background: rgba(10, 18, 34, 0.72);
+  backdrop-filter: blur(18px);
+}
 
 .article-content {
-  color: #24211e;
+  color: #122033;
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(1.05rem, 1vw + .75rem, 1.25rem);
   line-height: 1.82;
@@ -65,23 +107,25 @@ body {
 .article-content h3,
 .article-content h4 {
   margin: 1.8em 0 .65em;
-  color: #111;
+  color: #08111d;
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-weight: 900;
   letter-spacing: -.045em;
   line-height: 1.05;
 }
+
 .article-content h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
 .article-content h3 { font-size: clamp(1.45rem, 3vw, 2.15rem); }
-.article-content a { color: var(--editorial-red); font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
-.article-content blockquote { margin: 2em 0; border-left: 7px solid var(--editorial-red); padding: .2em 0 .2em 1em; color: #111; font-size: 1.35em; font-weight: 700; line-height: 1.35; }
+.article-content a { color: #7f2020; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.article-content blockquote { margin: 2em 0; border-left: 7px solid var(--editorial-red); padding: .2em 0 .2em 1em; color: #08111d; font-size: 1.35em; font-weight: 700; line-height: 1.35; }
 .article-content ul, .article-content ol { margin: 1.3em 0; padding-left: 1.4em; }
 .article-content li { margin: .5em 0; }
-.article-content img { width: 100%; margin: 2em 0; }
+.article-content img { width: 100%; margin: 2em 0; border-radius: 1.25rem; }
 
 input, textarea, select, button { border-radius: 0 !important; }
 
 @media (max-width: 640px) {
   .article-content { font-size: 1.05rem; line-height: 1.72; }
   .article-content p:first-of-type::first-letter { font-size: 3.9em; }
+  body::before { background-size: 72px 72px; }
 }

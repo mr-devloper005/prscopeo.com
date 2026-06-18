@@ -3,14 +3,14 @@ import { slot4BrandConfig } from '@/editable/theme/brand.config'
 export const pagesContent = {
   home: {
     metadata: {
-      title: 'News, media, and public updates',
+      title: 'Newsroom updates, media coverage, and public announcements',
       description: 'Explore announcements, newsroom updates, media coverage, and dynamic categories through a clean distribution experience.',
-      openGraphTitle: 'News, media, and public updates',
+      openGraphTitle: 'Newsroom updates, media coverage, and public announcements',
       openGraphDescription: 'Discover articles, visual posts, and connected content through a calmer reading-first experience.',
       keywords: ['story platform', 'article site', 'visual content', 'content discovery'],
     },
     hero: {
-      badge: 'Latest media and newsroom updates',
+      badge: '',
       title: ['A flexible home for', 'news, media, and public updates.'],
       description: 'Browse distributed media, company announcements, press coverage, and public updates across categories managed directly from the master panel.',
       primaryCta: { label: 'Browse latest updates', href: '/updates' },
