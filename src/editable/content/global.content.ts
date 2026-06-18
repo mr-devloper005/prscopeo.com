@@ -8,40 +8,40 @@ export const globalContent = {
     baseUrl: slot4BrandConfig.baseUrl,
   },
   nav: {
-    tagline: 'News, media, and public updates',
+    tagline: 'Premium media distribution and newsroom visibility',
     primaryLinks: [
-      { label: 'Latest Updates', href: '/updates' },
-      { label: 'News Media', href: '/updates?category=news-media' },
-      { label: 'Press Releases', href: '/updates?category=press-release' },
+      { label: 'Distributions', href: '/search' },
+      { label: 'Solutions', href: '/about' },
+      { label: 'News Center', href: '/search' },
       { label: 'Contact', href: '/contact' },
     ],
     actions: {
-      primary: { label: 'Browse updates', href: '/updates' },
-      secondary: { label: 'Submit', href: '/contact' },
+      primary: { label: 'Get started', href: '/signup' },
+      secondary: { label: 'Login', href: '/login' },
     },
   },
   footer: {
-    tagline: 'Newsroom updates and distributed media',
-    description: 'A flexible media distribution surface for announcements, press coverage, public updates, and dynamic news categories.',
+    tagline: 'Media distribution with a premium editorial feel',
+    description: 'Explore releases, public updates, and newsroom-ready coverage through a more polished discovery surface built for modern distribution teams.',
     columns: [
       {
-        title: 'Explore',
+        title: 'Distribution',
         links: [
-          { label: 'Latest Updates', href: '/updates' },
-          { label: 'News Media', href: '/updates?category=news-media' },
-          { label: 'Business News', href: '/updates?category=business' },
-          { label: 'Press Releases', href: '/updates?category=press-release' },
+          { label: 'Latest Releases', href: '/search' },
+          { label: 'Search Archive', href: '/search' },
+          { label: 'Business Coverage', href: '/about' },
+          { label: 'Media Desk', href: '/contact' },
         ],
       },
       {
-        title: 'Site',
+        title: 'Company',
         links: [
           { label: 'About', href: '/about' },
           { label: 'Contact', href: '/contact' },
         ],
       },
     ],
-    bottomNote: 'Built for fast, flexible, and category-led media distribution.',
+    bottomNote: 'Built for elevated distribution, clearer discovery, and public-facing newsroom updates.',
   },
   commonLabels: {
     readMore: 'Read more',
